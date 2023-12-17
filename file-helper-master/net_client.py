@@ -311,7 +311,7 @@ class Client(QtCore.QObject):
         # 获取文件
         file_path = self.__TransPorter.GetFileUI().treeWidget.GetFile()
         print(client_name,"发送文件",file_path)
-        with open('log.txt', "w", encoding="utf-8") as file:
+        with open('log.txt', "a+", encoding="utf-8") as file:
             now_time = datetime.datetime.now()
             cur_time = datetime.datetime.strftime(now_time, '%Y-%m-%d %H:%M:%S')
             file.write(cur_time+" 发送文件: "+file_path+"\n")
