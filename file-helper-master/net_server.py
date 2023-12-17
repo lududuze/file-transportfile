@@ -314,7 +314,7 @@ class Server(QtCore.QObject):
             return file_name
         file_name = file_name.decode('utf-8')
         print(client_name,'上传请求',file_name)
-        with open('log.txt', "w", encoding="utf-8") as file:
+        with open('log.txt', "a+", encoding="utf-8") as file:
             now_time = datetime.datetime.now()
             cur_time = datetime.datetime.strftime(now_time, '%Y-%m-%d %H:%M:%S')
             file.write(cur_time+" 上传请求: "+file_name+"\n")
